@@ -6,7 +6,7 @@ Just a simple wrapper to make your sprites map a base64 string within your CSS i
 So instead of the usual spriting like this:
 
 ````
-.mysprites-sprite {
+.mysprites-sprite, .random-selector, .another-random-selector {
   background: url('/images/mysprites-s8860754bda.png') no-repeat;
 }
 ````
