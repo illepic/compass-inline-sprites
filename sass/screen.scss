@@ -1,5 +1,5 @@
 ///
- // The goal here is base64 embed our sprite map into our CSS output instead
+ // The goal here is to base64 embed our sprite map into our CSS output instead
  // of using the normal sprite mapping to local files
  ///
 
@@ -9,7 +9,7 @@
 ///
  // Create our spritesheet.
  // We now have a named spritesheet called: $mysprites-sprites
- // We could use sprites normally with: @include mysprites-sprites("spritename");
+ // We could use sprites normally with: @include mysprites-sprite("spritename");
  ///
 @import "mysprites/*.png";
 
@@ -17,7 +17,7 @@
  // Base64 encode our sprites
  ///
 @mixin base64-sprites($sprite-name, $dimensions: true) {
-  @extend .base64-sprites;
+  @extend .base64-sprites; // see below
   background-position: sprite-position($mysprites-sprites, $sprite-name);
 
   @if $dimensions{
@@ -41,5 +41,5 @@
   @include base64-sprites("compass");
 }
 .another-random-selector{
-  @include base64-sprites("grumpy");
+  @include base64-sprites("grumpy", false);
 }
